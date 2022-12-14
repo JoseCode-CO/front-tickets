@@ -7,12 +7,12 @@ export const CreateClients = () => {
     const [name, setName] = useState('')
     const [lastname, setLastname] = useState('')
     const [telephone, setTelephone] = useState('')
-    const [direction, setDirection] = useState(0)
-    const [identy_document, setIdenty_document] = useState(0)
+    const [direction, setDirection] = useState('')
+    const [identy_document, setIdenty_document] = useState('')
     const [email, setEmail] = useState('')
 
     const store = async (e) => {
-        e.preventDefault()
+        e.preventDefault(e)
         await axios.post(endpoint, {name: name, lastname: lastname, telephone: telephone, direction: direction, identy_document: identy_document, email:email})
         window.location.href = "http://localhost:3000/";
     }

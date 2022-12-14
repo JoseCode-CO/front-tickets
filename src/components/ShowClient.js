@@ -29,10 +29,10 @@ const ShowClient = () => {
             <table className="table table-striped">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
                         <th scope="col">Nombre</th>
                         <th scope="col">Apellido</th>
                         <th scope="col">Email</th>
+                        <th scope="col">Acciones</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -42,6 +42,7 @@ const ShowClient = () => {
                             <td>{client.lastname}</td>
                             <td>{client.email}</td>
                             <td>
+                                <Link to={`/asignar/${client.id}`} className='btn btn-primary'>Asignar ticket</Link>
                                 <Link to={`/edit/${client.id}`} className='btn btn-warning'>Editar</Link>
                                 <button className='btn btn-danger' onClick={ ()=>deleteClient(client.id)}>Eliminar</button>
                             </td>

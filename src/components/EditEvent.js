@@ -4,10 +4,10 @@ import axios from 'axios'
 import { useParams } from 'react-router-dom'
 const endpoint = 'http://127.0.0.1:8000/api/v1/clients'
 
-const EditClients = () => {
+const EditEvent = () => {
     const [name, setName] = useState('')
     const [lastname, setLastname] = useState('')
-    const [telephone, setTelephone] = useState(0)
+    const [telephone, setTelephone] = useState('')
     const [direction, setDirection] = useState(0)
     const [identy_document, setIdenty_document] = useState(0)
     const [email, setEmail] = useState('')
@@ -62,6 +62,17 @@ const EditClients = () => {
                 </div>
 
                 <div className='mb-3'>
+                    <label className='form-label'>Telefono</label>
+                    <input
+                     value={telephone}
+                     onChange={ (e) => setTelephone(e.target.value)}
+                     type='number'
+                     className='form-control'
+                     required
+                    />
+                </div>
+
+                <div className='mb-3'>
                     <label className='form-label'>Documento de identidad</label>
                     <input
                      value={identy_document}
@@ -101,4 +112,4 @@ const EditClients = () => {
   )
 }
 
-export default EditClients
+export default EditEvent
